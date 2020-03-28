@@ -7,4 +7,7 @@ Rails.application.routes.draw do
    post 'todolists' => 'todolists#create'
 
    get 'todolists' => 'todolists#index'
+
+   get 'todolists/:id' => 'todolists#show', as: 'todolist'
+   # .../todolists/1や.../todolists/3に該当する
 end

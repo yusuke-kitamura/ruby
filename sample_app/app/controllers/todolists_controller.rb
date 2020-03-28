@@ -12,6 +12,22 @@ class TodolistsController < ApplicationController
         # トップ画面へリダイレクト
         redirect_to '/top'
     end
+
+    def index
+    	@lists = List.all
+    end
+
+    def show
+    	@list = List.find(params[:id])
+    end
+
+    def create
+        list = List.new(list_params)
+        list.save # データベースへ保存する
+  
+        redirect_to todolist_path(list.id) # 詳細画面へリダイレクト
+     end
+
     private
    
     def list_params
