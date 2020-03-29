@@ -9,5 +9,7 @@ Rails.application.routes.draw do
    get 'todolists' => 'todolists#index'
 
    get 'todolists/:id' => 'todolists#show', as: 'todolist'
-   # .../todolists/1や.../todolists/3に該当する
+      # .../todolists/1や.../todolists/3に該当する
+   get 'todolists/:id/edit' => 'todolists#edit', as: 'edit_todolist'
+ 
 end
